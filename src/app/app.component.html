@@ -1,0 +1,53 @@
+
+<mat-toolbar>
+    
+  <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+      <mat-icon *ngIf="!sidenav.opened">
+        menu
+      </mat-icon>
+      <mat-icon *ngIf="sidenav.opened">
+          close
+      </mat-icon>
+  </button>
+  Basic Dashboard Information
+</mat-toolbar>
+
+<mat-sidenav-container> 
+
+  <mat-sidenav #sidenav="matSidenav" >
+
+      <img title="Profile" class="avatar mat-elevation-z8" src="https://unionromani.org/wp-content/uploads/2017/10/15036603278203.jpg">
+      <h4 class="name"> Daniel Mena</h4>
+      <p class="designation"> Junior Developer </p>
+
+      <mat-divider ></mat-divider>
+      <a routerLink="/" class="button fancy-button">
+      <button mat-button class="menu-button">
+        <mat-icon>home</mat-icon>
+        <span>Home</span>
+      </button>
+      </a>
+      <a routerLink="/tiempo" class="button fancy-button">
+        <button mat-button class="menu-button">
+          <mat-icon>thermostat</mat-icon>
+          <span>Weather</span>
+        </button>
+      </a>
+    
+      <a routerLink="/sport" class="button fancy-button">
+      <button mat-button class="menu-button">
+        <mat-icon>sports_soccer</mat-icon>
+        <span>Sport news</span>
+      </button>
+    </a>
+      <mat-divider ></mat-divider>
+
+  </mat-sidenav>
+  <mat-sidenav-content>
+      <div class="content mat-elevation-z4">
+        <router-outlet></router-outlet>
+      </div>
+
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

@@ -1,0 +1,57 @@
+
+
+
+<section class="container app-container">
+
+    
+  
+    
+    <div id="divWeatherMain"> 
+      <div *ngIf="WeatherData.isDay" class="weatherWidgetRow">
+          <i class="fas fa-3x fa-sun sun"></i>  
+      </div>   
+      <div *ngIf="!WeatherData.isDay" class="weatherWidgetRow">
+          <i class="fas fa-3x fa-moon moon"></i>  
+      </div>   
+      <div class="weatherWidgetRow cloudDiv">
+          <i class="fas fa-cloud fa-3x cloud"></i>
+      </div>
+      <div class="weatherWidgetRow" style="font-size: 32px;margin-top: 5px; color:lightgray">{{WeatherData.temp_celcius}}°</div>
+      <div class="weatherWidgetRow" style="font-size: 12px; color:lightgray">{{WeatherData.temp_min}}° / {{WeatherData.temp_max}}°</div>
+      <div class="weatherWidgetRow" style="font-size: 12px; color:lightgray">Feels Like: {{WeatherData.temp_feels_like}}°</div>
+      <div class="weatherWidgetRow" style="font-size: 25px;margin-top: 10px; color:lightgray">{{WeatherData.name}}</div>
+      <div class="weatherWidgetRow" style="font-size: 12px; color:lightgray">Humidity: {{WeatherData.main.humidity}}%</div>
+  </div>
+    
+  </section>
+
+
+<!-- 
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card card-body">
+                <img width="180" alt="Weather"
+                src="https://cdn.pixabay.com/photo/2016/03/18/15/07/cloudiness-1265205_960_720.png">
+                <form submit()="submitLocation(cityName, countryCode)">
+                    <p>
+                        <mat-form-field appearance="fill" >
+                        <mat-label>Hola</mat-label>
+                        <input  matInput placeholder="City" #cityName>
+                        <input  matInput placeholder="Country" #countryCode>
+                        <button mat-raised-button color="primary">
+                            Get Weather
+                        </button>
+                        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                        <mat-hint>City</mat-hint>
+                        </mat-form-field>
+                    </p>
+                    
+                </form>
+            </div>
+        </div>
+        <div class="col-md-6">
+
+        </div>
+    </div>
+</div>  -->
